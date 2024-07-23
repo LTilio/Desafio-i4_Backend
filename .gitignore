@@ -1,0 +1,38 @@
+# Ignore os diretórios e arquivos temporários de construção
+target/
+build/
+
+# Inclua o diretório Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Regras específicas para IDEs
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# Inclua arquivos do banco de dados H2
+# Ajuste o caminho e a extensão se necessário
+src/main/resources/*.h2.db
