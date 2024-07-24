@@ -1,9 +1,7 @@
 package br.com.Desafio_i4.model;
 
-import java.sql.Types;
-import java.util.Objects;
 
-import org.hibernate.annotations.JdbcTypeCode;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,7 +23,7 @@ public class Imagem {
 	private String tipo;
 
 	@Lob
-	@JdbcTypeCode(Types.BINARY)
+//	@JdbcTypeCode(Types.BINARY)
 	private byte[] dados;
 
 	public Imagem() {
