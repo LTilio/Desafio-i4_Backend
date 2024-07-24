@@ -1,0 +1,178 @@
+package br.com.Desafio_i4.DTO;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import br.com.Desafio_i4.model.Especie;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+
+public class PetDto {
+
+	private Long id;
+
+	@NotBlank(message = "O nome do pet não pode estar vazio")
+	@Size(max = 50, message = "O nome do pet deve ter no máximo 50 caracteres")
+	private String nome;
+
+	@NotNull(message = "A espécie do pet deve ser informada")
+	private Especie especie;
+
+	@Size(max = 30, message = "A raça do pet deve ter no máximo 30 caracteres")
+	private String raca;
+
+	@Positive(message = "A idade do pet deve ser um número positivo")
+	private int idade;
+
+	@Positive(message = "O peso do pet deve ser um número positivo")
+	private double peso;
+
+	@Size(max = 20, message = "A cor da pelagem deve ter no máximo 20 caracteres")
+	private String corPelagem;
+
+	@Size(max = 255, message = "As observações devem ter no máximo 255 caracteres")
+	private String observacoes;
+
+	@Size(max = 50, message = "O nome do dono deve ter no máximo 50 caracteres")
+	private String nomeDono;
+
+	@Size(max = 64, message = "O contato do dono deve ter no máximo 64 caracteres")
+	private String contatoDono;
+
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+	private LocalDate dataRegistro;
+
+	private String imagemUrl;
+
+	private List<ConsultaDto> consultas;
+
+	public PetDto() {
+	}
+
+	public PetDto(Long id, String nome, Especie especie, String raca, int idade, double peso, String corPelagem,
+			String observacoes, String nomeDono, String contatoDono, LocalDate dataRegistro, String imagemUrl,
+			List<ConsultaDto> consultas) {
+		this.id = id;
+		this.nome = nome;
+		this.especie = especie;
+		this.raca = raca;
+		this.idade = idade;
+		this.peso = peso;
+		this.corPelagem = corPelagem;
+		this.observacoes = observacoes;
+		this.nomeDono = nomeDono;
+		this.contatoDono = contatoDono;
+		this.dataRegistro = dataRegistro;
+		this.imagemUrl = imagemUrl;
+		this.consultas = consultas;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Especie getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(Especie especie) {
+		this.especie = especie;
+	}
+
+	public String getRaca() {
+		return raca;
+	}
+
+	public void setRaca(String raca) {
+		this.raca = raca;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+	public String getCorPelagem() {
+		return corPelagem;
+	}
+
+	public void setCorPelagem(String corPelagem) {
+		this.corPelagem = corPelagem;
+	}
+
+	public String getObservacoes() {
+		return observacoes;
+	}
+
+	public void setObservacoes(String observacoes) {
+		this.observacoes = observacoes;
+	}
+
+	public String getNomeDono() {
+		return nomeDono;
+	}
+
+	public void setNomeDono(String nomeDono) {
+		this.nomeDono = nomeDono;
+	}
+
+	public String getContatoDono() {
+		return contatoDono;
+	}
+
+	public void setContatoDono(String contatoDono) {
+		this.contatoDono = contatoDono;
+	}
+
+	public LocalDate getDataRegistro() {
+		return dataRegistro;
+	}
+
+	public void setDataRegistro(LocalDate dataRegistro) {
+		this.dataRegistro = dataRegistro;
+	}
+
+	public String getImagemUrl() {
+		return imagemUrl;
+	}
+
+	public void setImagemUrl(String imagemUrl) {
+		this.imagemUrl = imagemUrl;
+	}
+
+	public List<ConsultaDto> getConsultas() {
+		return consultas;
+	}
+
+	public void setConsultas(List<ConsultaDto> consultas) {
+		this.consultas = consultas;
+	}
+
+}
