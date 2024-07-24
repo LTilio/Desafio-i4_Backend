@@ -1,3 +1,6 @@
 2024-07-24 08:11:55.746641-03:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]selec * from pet"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
 selec * from pet [42001-224]
+2024-07-24 15:07:21.590857-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DADOS BINARY(255)": "CAST(X'89504e470d0a1a0a0000000d494844520000076200000762080600000047392d030000200... (2778701)"; SQL statement:
+insert into imagem (dados,nome,tipo,imagem_id) values (?,?,?,default) [22001-224]
