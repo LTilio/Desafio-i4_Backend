@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,16 @@ public class PetService {
         return pets.stream()
                 .map(this::addImageUrl)
                 .collect(Collectors.toList());
+    }
+    
+    public PetDto findById(Long id) {
+        Optional<Pet> petOptional = petRepository.findById(id);
+        if (petOptional.isPresent()) {
+            Pet pet = petOptional.get();
+            return addImageUrl(pet);
+        } else {
+            throw new RuntimeException("Pet not found with id " + id);
+        }
     }
 	
 }
